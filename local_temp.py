@@ -19,7 +19,7 @@ def get_latest_temperature(station):
     timeframe=get_timeframe(1)
     
     obs = download_stored_query("fmi::observations::weather::multipointcoverage",
-                                args=["bbox=18,55,35,75",
+                                args=["bbox=24,60,25,62",
                                       "starttime=" + timeframe["start time"],
                                       "endtime=" + timeframe["end time"]])
 
@@ -48,10 +48,13 @@ def get_latest_temperature(station):
 if __name__ == "__main__":
 
     datapoint=get_latest_temperature("Katinen")
-
-    print(datapoint["Station"])
-    print(datapoint["Time"])
-    print(datapoint["Temperature"])
+    if datapoint:
+        print(datapoint["Station"])
+        print(datapoint["Time"])
+        print(datapoint["Temperature"])
+        exit(0)
+    print("No data returned")
+    exit(1)
 
 
     
