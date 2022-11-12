@@ -1,0 +1,18 @@
+{
+    "StationConfig":{
+        "Point1": 24,
+        "Point2": 60,
+        "Point3": 25,
+        "Point4": 62,
+        "TimeFrame": 1,
+        "StationName": "Katinen"
+    },
+    "MQTTConfig": {
+        "LoginRequired": "True",
+        "Server": "192.168.0.105",
+        "Port": 1883,
+        "UserName": "user",
+        "Password": "psw",
+        "NodeName": "OutsideTemp"
+    }
+}
